@@ -4,11 +4,17 @@ def MassVote(N, Votes = []):
         sum_v = sum_v + Votes[i]
     result = []
     for j in range(len(Votes)):
+        if Votes[j] == 0:
+            r = 0.000
+            result.append(r)
+            continue
         r = ((((Votes[j] * 100)/ sum_v) / 0.001) // 1)*0.001
         result.append(r)
     max_win = result[0]
-    if N == 1:
+    if N == 1 and max_win != 0:
         str_res = "majority winner " + str(1)
+    elif N == 1 and max_win == 0:
+        str_res = "no winner"
     for r in range(1,len(result)):
         if max_win < result[r]:
             max_win = result[r]
