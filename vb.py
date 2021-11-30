@@ -20,13 +20,13 @@ def MassVote(N, Votes = []):
             max_win = result[r]
             if max_win > 50:
                 str_res = "majority winner " + str(r+1)
-            elif max_win < 50:
+            elif max_win <= 50:
                 str_res = "minority winner "+ str(r+1)
         elif result.count(max_win) > 1:
             str_res = "no winner"
         elif max_win == result[0] and max_win > 50:
             str_res = "majority winner " + str(1)
-        elif max_win == result[0] and max_win < 50:
+        elif max_win == result[0] and max_win <= 50:
             str_res = "minority winner "+ str(1)
             
     return str_res
