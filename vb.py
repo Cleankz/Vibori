@@ -5,11 +5,12 @@ def MassVote(N, Votes = []):
     result = []
     for j in range(len(Votes)):
         if Votes[j] == 0:
-            r = 0.000
-            result.append(r)
+            const = 0.000 # r - const
+            result.append(const)
             continue
-        r = ((((Votes[j] * 100)/ sum_v) / 0.001) // 1)*0.001
-        result.append(r)
+        const = ((((Votes[j] * 100)/ sum_v) / 0.001) // 1)*0.001
+        result.append(const)
+        const = -1
     max_win = result[0]
     if N == 1 and max_win != 0:
         str_res = "majority winner " + str(1)
