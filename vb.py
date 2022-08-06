@@ -1,14 +1,20 @@
-def MassVote(N, Votes = []):
+def sum_v(array):
     sum_v = 0
-    for i in range(len(Votes)):
+    for i in range(len(array)):
         sum_v = sum_v + Votes[i]
+    return sum_v
+
+def MassVote(N, Votes = []):
+    #sum_v = 0
+    #for i in range(len(Votes)):
+        #sum_v = sum_v + Votes[i]
     result = []
     for j in range(len(Votes)):
         if Votes[j] == 0:
             const = 0.000 # r - const
             result.append(const)
             continue
-        const = ((((Votes[j] * 100)/ sum_v) / 0.001) // 1)*0.001
+        const = ((((Votes[j] * 100)/ sum_v(Votes)) / 0.001) // 1)*0.001
         result.append(const)
         const = -1
     max_win = result[0]
