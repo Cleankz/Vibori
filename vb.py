@@ -1,4 +1,4 @@
-def sum_v(array):
+def sum_v(array): # подсчитывает сумму голосов
     sum_v = 0
     for i in range(len(array)):
         sum_v = sum_v + Votes[i]
@@ -17,10 +17,10 @@ def MassVote(N, Votes = []):
         const = ((((Votes[j] * 100)/ sum_v(Votes)) / 0.001) // 1)*0.001
         result.append(const)
         const = -1
-    max_win = result[0]
-    if N == 1 and max_win != 0:
+    max_win = result[0] # максимальный процент который набрал кандидат 
+    if N == 1 and max_win != 0: # если процент голосов больше 0 то победил первый кандидат        
         str_res = "majority winner " + str(1)
-    elif N == 1 and max_win == 0:
+    elif N == 1 and max_win == 0: # если процент голосов равен 0 то победителей нет
         str_res = "no winner"
     for r in range(1,len(result)):
         if max_win < result[r]:
